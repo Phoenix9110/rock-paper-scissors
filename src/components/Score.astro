@@ -1,0 +1,18 @@
+---
+const options = [
+  'rock',
+  'paper',
+  'scissors',
+  'lizard',
+  'spock'
+]
+---
+<article class="border-2 border-HeaderOutline rounded-xl w-1/2 flex flex-row justify-between p-5 ">
+  <section class="leading-none uppercase text-xl font-bold">
+    {options.map((option) => <p>{option}</p>)}
+  </section>
+  <section class="bg-white rounded-lg px-10 py-4">
+    <p class="text-xs text-center font-semibold tracking-widest text-ScoreText">SCORE</p>
+    <p class="text-5xl font-semibold tracking-tight text-HeaderOutline">12</p>
+  </section>
+</article>
