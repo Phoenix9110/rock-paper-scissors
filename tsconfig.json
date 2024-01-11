@@ -1,7 +1,7 @@
 {
-  "extends": "astro/tsconfigs/base",
+  "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "baseUrl": "C:/Users/Alejandra/Documents/Proyectos/MentorFrontend/rock-paper-scissors",
+    "baseUrl": "C:/Users/Alejandra/Documents/Proyectos/MentorFrontend/rock-paper-scissors/",
     "paths": {
       "@/*": [
         "src/*"
@@ -9,9 +9,7 @@
       "@/components": [
         "src/components/*"
       ],
-      "@/icons": [
-        "src/icons/*"
-      ]
+      "@/icons": ["src/icons/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"

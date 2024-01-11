@@ -15,8 +15,8 @@ export default {
 				'RockGradientEnd': 'hsl(349, 70%, 56%)',
 				'LizardGradientStart': 'hsl(261, 73%, 60%)',
 				'LizardGradientEnd': 'hsl(261, 72%, 63%)',
-				'CyanGradientStart': 'hsl(189, 59%, 53%)',
-				'CyanGradientEnd': 'hsl(189, 58%, 57%)',
+				'SpockGradientStart': 'hsl(189, 59%, 53%)',
+				'SpockGradientEnd': 'hsl(189, 58%, 57%)',
 	
 				'DarkText': 'hsl(229, 25%, 31%)',
 				'ScoreText': 'hsl(229, 64%, 46%)',

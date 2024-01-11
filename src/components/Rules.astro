@@ -1,0 +1,14 @@
+---
+// Component Imports
+import Modal from './Modal.astro';
+import Close from '@/icons/Close.astro'
+import RulesBonus from "../icons/RulesBonus.astro";
+
+---
+<Modal id='dialog' open='RULES'>
+  <main slot='main'>
+    <RulesBonus/>
+  </main>
+  <button slot='close'><Close/></button>
+</Modal>
+

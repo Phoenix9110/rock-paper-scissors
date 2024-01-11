@@ -1,0 +1,33 @@
+---
+
+const {id, open} = Astro.props;
+---
+
+<button onclick={`window.${id}.showModal()`} class="border-2 border-HeaderOutline rounded-xl px-7 py-2 text-xs text-center font-semibold tracking-widest">{open}</button>
+<dialog id={id} class="fixed top-2/4 left-2/4 translate-x-1/2 translate-y-1/2 p-5">
+  <form method="dialog">
+    <section class="flex justify-between px-5">
+      <h1 class="font-bold text-2xl">RULES</h1>
+      <slot name="close" />
+    </section>
+  </form>
+  <slot name="main" />
+
+</dialog>
+  
+<style lang="scss">
+dialog {
+	 position: fixed;
+	 left: 50%;
+	 top: 50%;
+	 transform: translate(-50%, -50%);
+}
+ dialog::backdrop {
+	 position: fixed;
+	 top: 0px;
+	 right: 0px;
+	 bottom: 0px;
+	 left: 0px;
+	 background: --DarkText;
+}
+</style>
