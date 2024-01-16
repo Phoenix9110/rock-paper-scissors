@@ -25,6 +25,11 @@ export default {
 				'BackgroundGradientStart': 'hsl(214, 47%, 23%)',
 				'BackgroundGradientEnd': 'hsl(237, 49%, 15%)',
 			},
+			boxShadow: {
+        'outer-down': '0 7px',
+				"inner-top": "inset 0 7px rgb(0 0 0 / 0.1)",
+				'outer-down-winner': '0px 0px 2px 30px hsl(231deg 34% 29% / 65%), 0px 0px 2px 70px hsl(231deg 34% 29% / 40%), 0px 0px 2px 115px hsl(231deg 34% 29% / 20%)'
+      }
 		}
 	},
 	plugins: [],
