@@ -1,7 +1,8 @@
 import Options from "./Options";
 import {OPTIONS} from '@/constans'
 
-const InitScreen = ({handleUsersChoice}) => {
+const InitScreen = () => {
+
   return(
     <section className="w-full flex flex-none flex-wrap items-center justify-center mt-10">
       <img
@@ -14,7 +15,7 @@ const InitScreen = ({handleUsersChoice}) => {
         {OPTIONS.map((option)=>{
           return(
             <div key={option.type} className={option.transformClass}>
-              <Options key={"Option_"+option.type} {...option} handleUsersChoice={handleUsersChoice} type='initDisplay'/>
+              <Options key={"Option_"+option.type} {...option} type='initDisplay'/>
             </div>
           )
         })}

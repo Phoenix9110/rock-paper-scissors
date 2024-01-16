@@ -1,16 +1,30 @@
 import { useState, useEffect } from "react";
 import Options from "./Options";
 import {OPTIONS, WINSCENARIOS} from '@/constans'
+import { useGameStore } from "@/store/gameStore";
 
-const FinalScreen = ({usersChoice, handlePlayAgain}) => {
+const FinalScreen = () => {
+  const usersChoice = useGameStore(state => state.usersChoice)
+  const setUsersChoice = useGameStore(state => state.setUsersChoice)
+  const result = useGameStore(state => state.result)
+  const setResult = useGameStore(state => state.setResult)
+  const housePicked = useGameStore(state => state.housePicked)
+  const setHousePicked = useGameStore(state => state.setHousePicked)
+  const score = useGameStore(state => state.score)
+  const setScore = useGameStore(state => state.setScore)
+
+  const handlePlayAgain = () => {
+    setHousePicked(null)
+    setResult(null)
+    setUsersChoice(null)
+  }
+
   let usersChoiceClass = OPTIONS.find((element) => element.selection === usersChoice)
-  const [result, updateResult] = useState(null)
-  const [housePicked, updateHousePicked] = useState(null)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       const indexChoice = Math.floor(Math.random() * 5)
-      updateHousePicked(OPTIONS[indexChoice])
+      setHousePicked(OPTIONS[indexChoice])
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -22,11 +36,13 @@ const FinalScreen = ({usersChoice, handlePlayAgain}) => {
       let houseWinScenario = WINSCENARIOS.find((scenario) => scenario.win === housePicked.selection)
 
       if(usersWinScenario.lose === housePicked.selection){
-        updateResult('YOU WIN')
+        setResult('YOU WIN')
+        const newScore = score + 1
+        setScore(newScore)
       }else if(houseWinScenario.lose === usersPicked){
-        updateResult('YOU LOSE')
+        setResult('YOU LOSE')
       }else{
-        updateResult("IT'S A DRAW")
+        setResult("IT'S A DRAW")
       }
     }
   }, [housePicked]);
@@ -42,7 +58,7 @@ const FinalScreen = ({usersChoice, handlePlayAgain}) => {
           {result &&
             <section className="w-52 flex flex-col items-center justify-center relative z-20">
               <h3 className="text-3xl mb-3">{result}</h3>
-              <button className="bg-white rounded-md text-BackgroundGradientEnd text-xs w-40 p-2 tracking-widest" onClick={handlePlayAgain()}>PLAY AGAIN</button>
+              <button className="bg-white rounded-md text-BackgroundGradientEnd text-xs w-40 p-2 tracking-widest" onClick={() => handlePlayAgain()}>PLAY AGAIN</button>
             </section>
           }
           <section>

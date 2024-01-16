@@ -1,10 +1,15 @@
+import { useGameStore } from "@/store/gameStore"
+const Options = ({selection, customClass, type='finalDisplay', shadow, winnerShadow=false}) => {
+    const setUsersChoice = useGameStore(state => state.setUsersChoice)
+    const handleUsersChoice = (selection) => {
+        setUsersChoice(selection)
+    } 
 
-const Options = ({selection, customClass, handleUsersChoice, type='finalDisplay', shadow, winnerShadow=false}) => {
     const sizeOuterRing = (type === 'initDisplay') ? 
         ' w-[97px] h-[97px] hover:scale-110 transition-transform ' : 
         ` w-[170px] h-[170px] p-[19px] shadow-outer-down ${shadow} `
     customClass += sizeOuterRing
-    //(winnerShadow) ? customClass += `${sizeOuterRing} shadow-winner` : sizeOuterRing
+
 
     const innerClass = (type === 'initDisplay') ? 
         'bg-white w-20 h-20 p-6 rounded-full' :
@@ -21,4 +26,11 @@ const Options = ({selection, customClass, handleUsersChoice, type='finalDisplay'
 
     )
 }
+//TODO: instead type === 'initDisplay' just check if users already made a move
+//TODO: move shadow and winnerShadow to states ?
+//TODO: rename variables and components ?
+// instead Options => Item
+
+
+
 export default Options

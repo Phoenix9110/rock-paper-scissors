@@ -1,20 +1,15 @@
-import {useState} from 'react';
 import InitScreen from '@/components/InitScreen'
 import FinalScreen from '@/components/FinalScreen'
+import { useGameStore } from '@/store/gameStore';
 
 
 const Game = () => {
-  const [usersChoice, setUsersChoice] = useState(null);
-  const handleUsersChoice = (selection) => {
-    setUsersChoice(selection)
-  }
-  const playAgain = () => {
-    setUsersChoice(null)
-  }
+  const usersChoice = useGameStore(state => state?.usersChoice)
+
   return (usersChoice===null) ? 
-    <InitScreen handleUsersChoice={handleUsersChoice}/>
+    <InitScreen/>
     :
-    <FinalScreen usersChoice={usersChoice} handlePlayAgain={()=> playAgain}/>
+    <FinalScreen/>
  
 }
 export default Game
