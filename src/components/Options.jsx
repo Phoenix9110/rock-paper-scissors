@@ -1,13 +1,16 @@
 import { useGameStore } from "@/store/gameStore"
-const Options = ({selection, customClass, type='finalDisplay', shadow, winnerShadow=false}) => {
+const Options = ({selection, customClass="", type='finalDisplay', shadow='shadow-transparent', winnerShadow=false}) => {
     const setUsersChoice = useGameStore(state => state.setUsersChoice)
     const handleUsersChoice = (selection) => {
         setUsersChoice(selection)
     } 
+    const housePicked = useGameStore(state => state.housePicked)
 
     const sizeOuterRing = (type === 'initDisplay') ? 
         ' w-[97px] h-[97px] hover:scale-110 transition-transform ' : 
         ` w-[170px] h-[170px] p-[19px] shadow-outer-down ${shadow} `
+
+
     customClass += sizeOuterRing
 
 

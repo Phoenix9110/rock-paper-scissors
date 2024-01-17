@@ -24,6 +24,7 @@ export default {
 	
 				'BackgroundGradientStart': 'hsl(214, 47%, 23%)',
 				'BackgroundGradientEnd': 'hsl(237, 49%, 15%)',
+				'transparent': 'transparent',
 			},
 			boxShadow: {
         'outer-down': '0 7px',

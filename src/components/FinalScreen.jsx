@@ -12,7 +12,7 @@ const FinalScreen = () => {
   const setHousePicked = useGameStore(state => state.setHousePicked)
   const score = useGameStore(state => state.score)
   const setScore = useGameStore(state => state.setScore)
-
+  const [didUserWin, setDidUserWin] = useState(null)
   const handlePlayAgain = () => {
     setHousePicked(null)
     setResult(null)
@@ -39,8 +39,10 @@ const FinalScreen = () => {
         setResult('YOU WIN')
         const newScore = score + 1
         setScore(newScore)
+        setDidUserWin(true)
       }else if(houseWinScenario.lose === usersPicked){
         setResult('YOU LOSE')
+        setDidUserWin(false)
       }else{
         setResult("IT'S A DRAW")
       }
@@ -50,19 +52,21 @@ const FinalScreen = () => {
 
 
     return(
-        <section className="flex flex-1 gap-3 justify-center items-center">
-          <section className="w-min-24">
-            <p className="text-center mb-8 text-sm tracking-widest">YOU PICKED</p>
+        <section className="flex flex-1 gap-3 flex-wrap justify-center items-center">
+          <section className={`scale-75 sm:scale-100 sm:order-1 flex 
+            flex-col-reverse sm:block ${!didUserWin ? 'z-10' : ''}`}>
+            <p className="text-center mt-8 sm:mb-8 sm:mt-0 text-lg sm:text-sm tracking-widest relative z-20">YOU PICKED</p>
             <Options selection={usersChoice} customClass={usersChoiceClass.customClass} shadow={usersChoiceClass.boxShadow} winnerShadow={result === 'YOU WIN' ? true : false}/>
           </section>
           {result &&
-            <section className="w-52 flex flex-col items-center justify-center relative z-20">
-              <h3 className="text-3xl mb-3">{result}</h3>
-              <button className="bg-white rounded-md text-BackgroundGradientEnd text-xs w-40 p-2 tracking-widest" onClick={() => handlePlayAgain()}>PLAY AGAIN</button>
+            <section className="sm:order-2 order-3 w-72 sm:w-52 flex flex-col items-center justify-center relative z-20 sm:px-8">
+              <h3 className="sm:text-3xl text-6xl mb-3">{result}</h3>
+              <button className="bg-white rounded-md text-BackgroundGradientEnd text-base sm:text-xs w-52 py-2 px-4 sm:w-40 sm:p-2 tracking-widest" onClick={() => handlePlayAgain()}>PLAY AGAIN</button>
             </section>
           }
-          <section>
-            <p  className="text-center mb-8 text-sm tracking-widest">THE HOUSE PICKED</p>
+          <section className={`scale-75 sm:scale-100 sm:order-3 flex 
+            flex-col-reverse sm:block ${didUserWin ? 'z-10' : ''}`}>
+            <p className="text-center mt-8 sm:mb-8 sm:mt-0 text-lg sm:text-sm tracking-widest relative z-20">THE HOUSE PICKED</p>
             
               <section className={housePicked ? "" : "animate-pulse "}>
                 <Options {...housePicked} shadow={housePicked?.boxShadow} winnerShadow={result === 'YOU LOSE' ? true : false}/>

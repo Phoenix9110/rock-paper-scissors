@@ -2,8 +2,8 @@
 const {id, open} = Astro.props;
 ---
 
-<button onclick={`window.${id}.showModal()`} class="border-2 border-HeaderOutline rounded-xl px-7 py-2 text-xs text-center font-semibold tracking-widest">{open}</button>
-<dialog id={id} class="fixed top-2/4 left-2/4 translate-x-1/2 translate-y-1/2 p-5">
+<button onclick={`window.${id}.showModal()`} class="border-2 border-HeaderOutline rounded-xl px-7 py-2  text-sm sm:text-xs text-center font-semibold tracking-[0.2rem] sm:tracking-widest">{open}</button>
+<dialog id={id} class="fixed top-2/4 left-2/4 translate-x-1/2 translate-y-1/2 py-2 sm:p-5">
   <form method="dialog">
     <section class="flex justify-between px-5">
       <h1 class="font-bold text-2xl">RULES</h1>
