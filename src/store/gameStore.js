@@ -2,11 +2,11 @@ import { create } from 'zustand'
 
 export const useGameStore = create((set) => ({
   score: 0,
-  result: null,
-  usersChoice: null,
+  matchResult: null,
+  userPicked: null,
   housePicked: null,
   setScore: (score) => set({ score }),
-  setResult: (result) => set({ result }),
-  setUsersChoice: (usersChoice) => set({ usersChoice }),
+  setMatchResult: (matchResult) => set({ matchResult }),
+  setUserPicked: (userPicked) => set({ userPicked }),
   setHousePicked: (housePicked) => set({ housePicked })
 }))

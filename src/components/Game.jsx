@@ -1,15 +1,12 @@
 import InitScreen from '@/components/InitScreen'
 import FinalScreen from '@/components/FinalScreen'
-import { useGameStore } from '@/store/gameStore';
-
+import { useGameStore } from '@/store/gameStore'
 
 const Game = () => {
-  const usersChoice = useGameStore(state => state?.usersChoice)
+  const userPicked = useGameStore(state => state?.userPicked)
 
-  return (usersChoice===null) ? 
-    <InitScreen/>
-    :
-    <FinalScreen/>
- 
+  return (userPicked === null)
+    ? <InitScreen />
+    : <FinalScreen />
 }
 export default Game
