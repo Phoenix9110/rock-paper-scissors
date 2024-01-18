@@ -1,47 +1,62 @@
-# Astro Starter Kit: Minimal
+# Frontend Mentor - Rock, Paper, Scissors solution
 
-```sh
-npm create astro@latest -- --template minimal
-```
+This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/minimal)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/minimal)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/minimal/devcontainer.json)
+## Table of contents
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- [Overview](#overview)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
-## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files:
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## Overview
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+### Screenshot
 
-Any static assets, like images, can be placed in the `public/` directory.
+![image](./initScreen.png)
+![image](./finalScreen.png)
 
-## 🧞 Commands
+Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-All commands are run from the root of the project, from a terminal:
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-## 👀 Want to learn more?
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Links
+
+- Solution URL: [https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/](https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/)
+- Live Site URL: [https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/](https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/)
+
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties (Flexbox, Grid)
+- [React](https://reactjs.org/) - JS library
+- [Astro](https://astro.build/) - Agnostic framework
+- [Tailwind](https://tailwindcss.com/) - For styles
+- [Zustand](https://zustand-demo.pmnd.rs/) - -For ate state management
+
+
+### What I learned
+
+I started the challenge of replicating the rock paper scissors game in order to practice a little tailwind, and learn the use of Astro with zustand, I was surprised by the impact on performance when performing the application with Astro, and the use of zustand to manage the state was particularly easy, I can't wait to do another project with the same stack.
+
+## Author
+
+- Frontend Mentor - [@Phoenix9110](https://www.frontendmentor.io/profile/Phoenix9110)
+
+
+## Acknowledgments
+
+To Rebel Chris and his very usefull Modal Component in Astro (https://github.com/rebelchris/astro-modal)
