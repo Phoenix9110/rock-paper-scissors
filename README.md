@@ -34,7 +34,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### Links
 
 - Solution URL: [https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/](https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/)
-- Live Site URL: [https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/](https://65a840db49068a0d7469b654--inspiring-liger-9e6fd5.netlify.app/)
+- Live Site URL: [https://github.com/Phoenix9110/rock-paper-scissors](https://github.com/Phoenix9110/rock-paper-scissors)
 
 ## My process
 
